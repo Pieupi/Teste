@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amarggie Rifa</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Linkando o CSS -->
+  <script>
+    function validateForm() {
+      var name = document.forms["amargiForm"]["name"].value;
+      var email = document.forms["amargiForm"]["email"].value;
+
+      if (name.trim() === "") {
+        alert("O campo Nome é obrigatório.");
+        return false;
+      }
+      if (email.trim() === "") {
+        alert("O campo Email é obrigatório.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Amarggie Rifa</h1>
+    <form name="amargiForm" action="FormServlet" method="post" onsubmit="return validateForm()">
+      <label for="name">Nome:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="message">Mensagem:</label><br>
+      <textarea id="message" name="message"></textarea><br><br>
+
+      <input type="submit" value="Enviar">
+    </form>
+  </div>
+</body>
+</html>
